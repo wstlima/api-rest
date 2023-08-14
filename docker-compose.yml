@@ -11,27 +11,15 @@ services:
     image: mongo:latest
     restart: always
     container_name: MY_MONGODB    
+    build:
+      context: .    
+    restart: always
     environment:
       - MONGODB_DATABASE="desafio"
     ports:
       - 27017:27017
     networks: 
-      - mynetwork
-
-  # mymongoexpress:
-  #   image: mongo-express
-  #   restart: always
-  #   container_name: MY_MONGO_EXPRESS
-  #   ports:
-  #     - 5081:8081
-  #   env_file:
-  #     - ./mongo-express.env
-  #   depends_on:
-  #     - mymongodb
-  #   links:
-  #     - mymongodb
-  #   networks: 
-  #     - mynetwork
+      - mynetwork      
 
   mynodejs:
     container_name: MY_NODEJS
@@ -41,14 +29,11 @@ services:
       - DATABASE_HOST="mongodb://mymongodb:27017/desafio"
     ports:
       - 3000:3000
+    ports:
+      - 3000:3000
     depends_on:
       - mymongodb
     links:
       - mymongodb
     networks: 
       - mynetwork
-
-
-    # volumes:
-      # - .:/usr/app
-      # - /usr/app/node_modules
