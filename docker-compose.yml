@@ -38,7 +38,7 @@ services:
     build:
       context: .
     environment:
-      - DATABASE_HOST="mongodb://127.0.0.1:27017/admin"
+      - DATABASE_HOST="mongodb://localhost:27017/admin"
     ports:
       - 3000:3000
     depends_on:

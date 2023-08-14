@@ -19,7 +19,7 @@ RUN apk add --update --no-cache git ca-certificates \
 
 
 RUN mkdir ~/.ssh/
-ENV DATABASE_HOST = "mongodb://127.0.0.1:27017/admin"
+ENV DATABASE_HOST = "mongodb://localhost:27017/admin"
 
 COPY ./keys/id_rsa /root/.ssh/id_rsa
 COPY ./keys/id_rsa.pub /root/.ssh/id_rsa.pub
