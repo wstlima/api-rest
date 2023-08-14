@@ -1,0 +1,43 @@
+version: '3.8'
+
+networks: 
+
+  mynetwork:
+    driver: bridge
+
+services:
+
+  mymongodb:
+    image: mongo:latest
+    container_name: MY_MONGODB
+    build:
+      context: .    
+    restart: always
+    environment:
+      - MONGODB_DATABASE="desafio"
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db      
+    networks: 
+      - mynetwork      
+
+  mynodejs:
+    container_name: MY_NODEJS
+    build:
+      context: .
+    env_file: 
+      - ./nodejs.env
+    ports:
+      - 3000:3000
+    # volumes:
+    #   - .:/home/app/webapp
+    #   - /home/app/webapp/node_modules
+    depends_on:
+      - mymongodb
+    links:
+      - mymongodb
+    networks: 
+      - mynetwork
+      
+
