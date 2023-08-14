@@ -1,0 +1,15 @@
+# .git/
+# .gitignore
+**/.gitkeep
+**/.DS_Store
+.next/
+.dockerignore
+Dockerfile
+dist/
+docker-compose.yml
+# node_modules/
+nginx/
+package-lock.json
+yarn.lock
+# .env-example
+README.md
