@@ -1,4 +1,5 @@
-FROM keymetrics/pm2:18-alpine
+
+FROM node:18-alpine
 
 ENV NPM_CONFIG_LOGLEVEL warn
 
@@ -19,7 +20,7 @@ RUN apk add --update --no-cache git ca-certificates \
 
 
 RUN mkdir ~/.ssh/
-ENV DATABASE_HOST = "mongodb://localhost:27017/admin"
+
 
 COPY ./keys/id_rsa /root/.ssh/id_rsa
 COPY ./keys/id_rsa.pub /root/.ssh/id_rsa.pub
@@ -35,12 +36,14 @@ RUN chmod 600 /root/.ssh/known_hosts
 # ENV TZ=America/Sao_Paulo
 
 WORKDIR /usr/app
+RUN mkdir api-rest
+ADD . ./api-rest
+# ADD ./.env ./api-rest/.env
 ADD ./pm2.json ./pm2.json
-# RUN mkdir ~/api-rest
+
 # RUN rm -rf api-rest
-RUN git clone git@github.com:wstlima/api-rest.git 
+# RUN git clone git@github.com:wstlima/api-rest.git 
 RUN cd /usr/app/api-rest  && npm install --no-audit && npm run build && cd ..
-ADD ./.env ./api-rest/.env
 RUN npm install --global pm2@latest pm2-logrotate@latest vite cross-env --no-audit
 RUN pm2 install pm2-logrotate
 

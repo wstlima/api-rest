@@ -2,18 +2,29 @@
   "apps": [
     {
       "name": "api-rest",
-      "script": "api-rest/dist/main.js",
+      "script": "dist/main.js",
       "instances": 1,
       "exec_mode": "cluster",
       "autorestart": true,
+      "max_memory_restart": "300M",
+      "cron_restart": "0 0 * * *",
       "watch": false,
-      "max_memory_restart": "1G",
       "env": {
-        "NODE_ENV": "development",
+        "NODE_ENV": "production",
         "PORT": 3000,
-         "MONGODB_URL": "mongodb://localhost:27017/admin"
-
+        "MONGODB_URL": "mongodb://mongodb:27017/apidb"
       }
     }
-  ]
+  ],
+  "deploy": {
+    "production": {
+      "host": ["localhost"],
+      "repo": "git@github.com:wstlima/api-rest.git",
+      "user": "mongodb",
+      "ref"  : "origin/master",
+      "path" : "/usr/app",
+      "post-deploy" : "npm install --no-audit && npm run build && pm2 startOrRestart pm2.json --env production",
+      "key": "~/.ssh/id_rsa"
+    }
+  }
 }
