@@ -4,7 +4,7 @@ services:
 
   mongodb:
     image: controlemix/api-rest:latest
-    container_name: mongodb
+    container_name: mongodbo
     ports:
       - '27017:27017'
     environment:
