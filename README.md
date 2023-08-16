@@ -1,1 +1,57 @@
-# api-rest
+# API Rest
+
+Poc de uma API Rest para apresentação de uma arquitetura de microserviço backend.
+
+### Recursos
+- Mongo Database
+- PM2 Cluster Mode (Node.js) e monitoramento
+- Testes Unitários
+- Testes de Integração
+- Lint (Eslint) e Prettier (Code Formatter)
+- Padrões de Projeto (Design Patterns) 
+- JWT Token Passport Strategy
+- Docker para MongoDB Database e PM2 Cluster Mode
+- NestJS Framework (Node.js) e Typescript para desenvolvimento da API
+- API para CRUD de Usuários, Produtos e Locações
+- API para Autenticação e Refresh Token
+- Estratégia de execução da aplicação em Cluster Mode (Node.js) ou Local
+
+## Node Engine
+- Version >= 18
+
+## Postman Collections
+- https://pobsro.postman.co/workspace/Well-Space~530296d8-c915-436a-8433-e8faa742e999/collection/1225563-e33e75a6-3451-4cb0-8e59-67696d72bdf5?action=share&creator=1225563
+
+Entre na pasta do projeto e certifique-se que o não exista nenhum serviço rodando na porta 3000 e 27017.
+
+## Para rodar em Cluster Mode com PM2 (precisa ter o Docker e Docker Compose instalados)
+
+Inicie o serviço com o comando:
+
+`docker-compose up -d --build`
+
+Para parar o serviço, execute o comando:
+
+`docker-compose down`
+
+## Para rodar localmente somente com o Docker rodando somente o MongoDB
+
+Inicie o serviço com o comando:
+
+`npm run preview:local`
+
+Para parar o serviço, execute o comando:
+
+`docker-compose down`
+
+## Para rodar localmente o Docker
+
+Instale os pacotes do projeto com o comando:
+
+`npm run install`
+
+Depois inicie a aplicação com o comando:
+
+`npm run start:dev`
+
+
