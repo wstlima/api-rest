@@ -63,7 +63,7 @@ Instale os pacotes do projeto com o comando:
 
 Depois inicie a aplicação com o comando:
 
-`npm run start:dev`
+`npm start:dev`
 
 ## Deploy da API no container
 
