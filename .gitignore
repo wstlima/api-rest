@@ -8,7 +8,7 @@
 # Logs
 logs
 *.log
-pm2.json
+# pm2.json
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
