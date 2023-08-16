@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   mongodb:
-    image: wstlima:api-rest-mongodb
+    image: controlemix:api-rest-mongodb
     build:
       context: .
       dockerfile: Dockerfile.jammy  
