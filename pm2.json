@@ -22,9 +22,9 @@
       "repo": "git@github.com:wstlima/api-rest.git",
       "user": "mongodb",
       "ref"  : "origin/master",
-      "path" : "/usr/app",
-      "pre-deploy-local": "pm2 stop api-rest && git fetch origin main && git checkout -f origin && git checkout main &&  git pull && pm2 start api-rest && pm2 reload api-rest",
-      "post-deploy" : "npm install --no-audit && npm run build && pm2 startOrRestart pm2.json --env production",
+      "path" : "./",
+      "pre-deploy-local": "pm2 stop api-rest && git fetch origin main && git checkout -f origin && git checkout main &&  git pull ",
+      "post-deploy" : "npm install --no-audit && npm run build && pm2 startOrRestart pm2.json",
       "key": "~/.ssh/id_rsa"
     }
   }
