@@ -148,6 +148,9 @@ RUN cd /usr/app \
 
 RUN cd /usr/app && pm2 install pm2-logrotate
 
+ENV PM2_PUBLIC_KEY xv2975m2cytu6ue
+ENV PM2_SECRET_KEY bh413o8sc5awx6c
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 27017 3000
