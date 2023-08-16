@@ -15,6 +15,7 @@ Poc de uma API Rest para apresentação de uma arquitetura de microserviço back
 - API para CRUD de Usuários, Produtos e Locações
 - API para Autenticação e Refresh Token
 - Estratégia de execução da aplicação em Cluster Mode (Node.js) ou Local
+- Deploy da API no container usando o Git
 
 ### Monitoramento com o PM2
 
@@ -63,6 +64,12 @@ Instale os pacotes do projeto com o comando:
 Depois inicie a aplicação com o comando:
 
 `npm run start:dev`
+
+## Deploy da API no container
+
+Para fazer o deploy da API no container, execute o comando:
+
+`npm run deploy:api`
 
 ## Débitos Técnicos
 
