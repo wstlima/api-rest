@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "build:api": "pm2 stop api-rest && cd /usr/app  && git fetch origin main && git checkout -f origin/main && git checkout main &&  git pull git@github.com:wstlima/api-rest.git main && pm2 start api-rest && pm2 reload api-rest",
+    "build:api": "pm2 stop api-rest && cd /usr/app  && git fetch origin main && git checkout -f origin && git checkout main &&  git pull && pm2 start api-rest && pm2 reload api-rest",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
