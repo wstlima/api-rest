@@ -4,6 +4,7 @@ services:
 
   mongodb:
     image: controlemix/api-rest:latest
+    container_name: mongodb
     ports:
       - '27017:27017'
       - '3000:3000'
