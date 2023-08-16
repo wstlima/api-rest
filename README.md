@@ -20,7 +20,7 @@ Poc de uma API Rest para apresentação de uma arquitetura de microserviço back
 
 O acesso será enviado por e-mail.
 
-![Monitoramento PM2](/../<main>/public/images/pm2.png?raw=true "Monitoramento PM2")
+![Monitoramento PM2](/../main/public/images/pm2.png?raw=true "Monitoramento PM2")
 
 ## Node Engine
 - Version >= 18
