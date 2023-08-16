@@ -16,6 +16,12 @@ Poc de uma API Rest para apresentação de uma arquitetura de microserviço back
 - API para Autenticação e Refresh Token
 - Estratégia de execução da aplicação em Cluster Mode (Node.js) ou Local
 
+### Monitoramento com o PM2
+
+O acesso será enviado por e-mail.
+
+![Monitoramento PM2](/../<main>/public/images/pm2.png?raw=true "Monitoramento PM2")
+
 ## Node Engine
 - Version >= 18
 
@@ -24,7 +30,9 @@ Poc de uma API Rest para apresentação de uma arquitetura de microserviço back
 
 Entre na pasta do projeto e certifique-se que o não exista nenhum serviço rodando na porta 3000 e 27017.
 
-## Para rodar em Cluster Mode com PM2 (precisa ter o Docker e Docker Compose instalados)
+## Para rodar em Cluster Mode com PM2 
+
+Precisa ter o Docker e Docker Compose instalados
 
 Inicie o serviço com o comando:
 
@@ -34,7 +42,7 @@ Para parar o serviço, execute o comando:
 
 `docker-compose down`
 
-## Para rodar localmente somente com o Docker rodando somente o MongoDB
+## Para rodar localmente somente com o Docker rodando o MongoDB
 
 Inicie o serviço com o comando:
 
@@ -46,6 +54,8 @@ Para parar o serviço, execute o comando:
 
 ## Para rodar localmente o Docker
 
+Precisa ter o MongoDB rodando na porta 27017 com o banco de dados "apidb" criado e sem senha de acesso e o Node.js instalado.
+
 Instale os pacotes do projeto com o comando:
 
 `npm run install`
@@ -53,5 +63,13 @@ Instale os pacotes do projeto com o comando:
 Depois inicie a aplicação com o comando:
 
 `npm run start:dev`
+
+## Débitos Técnicos
+
+- Completar os Testes de Integração
+- Completar os Testes Unitários
+- Completar o Lint
+- Completar o Prettier
+- Finalizar as regras de negócio de Locação
 
 
