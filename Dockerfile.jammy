@@ -127,6 +127,9 @@ RUN chmod 600 /root/.ssh/id_rsa.pub
 RUN chmod 600 /root/.ssh/known_hosts	
 ADD . /usr/app
 RUN npm install --global --no-audit npm@9.8.1
+
+RUN cd /usr/app && git fetch origin main && git checkout -f origin && git checkout main &&  git pull
+
 RUN cd /usr/app \
     ; \
     npm install --global --no-audit \	
@@ -141,6 +144,7 @@ RUN cd /usr/app \
 	; \
 	npm run build;
 	# && npm install --no-audit \
+
 
 RUN cd /usr/app && pm2 install pm2-logrotate
 
