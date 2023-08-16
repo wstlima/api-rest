@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      - TZ=America/Sao_Paulo
+      - MONGO_INITDB_DATABASE=apidb  
+    volumes:
+      - mongodataapirest:/data/db
+    networks:
+      - api-rest-network
+
+networks:
+  api-rest-network:
+    driver: bridge
+
+volumes:
+  mongodataapirest:
