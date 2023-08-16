@@ -12,7 +12,7 @@
     "deploy:api": "docker-compose exec -T mongodb npm run build:api",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "preview:full": "docker-compose up -d --build",
-    "preview:local": "npm i --no-audit && npm run build && docker-compose -f ./docker-compose.mongo.yml  up -d && npm run start:dev",
+    "preview:local": "docker stop mongodb && npm i --no-audit && npm run build && docker-compose -f ./docker-compose.mongo.yml  up -d && npm run start:dev",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
