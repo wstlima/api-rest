@@ -37,7 +37,7 @@ Precisa ter o Docker e Docker Compose instalados
 
 Inicie o serviço com o comando:
 
-`docker-compose up -d --build`
+`docker-compose up -d`
 
 Para parar o serviço, execute o comando:
 
