@@ -1,6 +1,14 @@
 # API Rest
 
 Poc de uma API Rest para apresentação de uma arquitetura de microserviço backend.
+Em um único container está rodando diversas tecnologias:
+- MongoDB
+- PM2
+- Node.js
+- Git para deploy
+- NestJs
+
+Dispensando a criação de diversos containers e assim economizando memória e centralizando tudo em um único serviço!
 
 ### Recursos
 - Mongo Database
@@ -59,7 +67,7 @@ Precisa ter o MongoDB rodando na porta 27017 com o banco de dados "apidb" criado
 
 Instale os pacotes do projeto com o comando:
 
-`npm run install`
+`npm install`
 
 Depois inicie a aplicação com o comando:
 
