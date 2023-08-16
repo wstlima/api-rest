@@ -15,10 +15,6 @@ services:
       - MONGO_INITDB_DATABASE=apidb  
     volumes:
       - mongodataapirest:/data/db
-      - appapirest:/usr/app
-      - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh:rw
-      - ./pm2.json:/usr/app/pm2.json:rw
-      - ./dist:/usr/app/dist:rw
     networks:
       - api-rest-network
 
@@ -28,4 +24,10 @@ networks:
 
 volumes:
   mongodataapirest:
-  appapirest:
+  # appapirest:
+
+
+      # - appapirest:/usr/app
+      # - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh:rw
+      # - ./pm2.json:/usr/app/pm2.json:rw
+      # - ./dist:/usr/app/dist:rw
