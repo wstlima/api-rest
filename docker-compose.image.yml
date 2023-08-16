@@ -6,7 +6,7 @@ services:
     image: controlemix/api-rest:latest
     build:
       context: .
-      dockerfile: Dockerfile.jammy  
+      dockerfile: Dockerfile.image 
     ports:
       - '27017:27017'
       - '3000:3000'
@@ -24,10 +24,3 @@ networks:
 
 volumes:
   mongodataapirest:
-  # appapirest:
-
-
-      # - appapirest:/usr/app
-      # - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh:rw
-      # - ./pm2.json:/usr/app/pm2.json:rw
-      # - ./dist:/usr/app/dist:rw

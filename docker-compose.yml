@@ -21,10 +21,3 @@ networks:
 
 volumes:
   mongodataapirest:
-  # appapirest:
-
-
-      # - appapirest:/usr/app
-      # - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh:rw
-      # - ./pm2.json:/usr/app/pm2.json:rw
-      # - ./dist:/usr/app/dist:rw
