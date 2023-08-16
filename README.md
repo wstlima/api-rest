@@ -53,7 +53,7 @@ Para parar o serviço, execute o comando:
 
 `docker-compose down`
 
-## Para rodar localmente o Docker
+## Para rodar localmente sem o Docker
 
 Precisa ter o MongoDB rodando na porta 27017 com o banco de dados "apidb" criado e sem senha de acesso e o Node.js instalado.
 
