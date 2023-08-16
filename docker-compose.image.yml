@@ -4,6 +4,7 @@ services:
 
   mongodb:
     image: controlemix/api-rest:latest
+    container_name: mongodb
     build:
       context: .
       dockerfile: Dockerfile.image 
