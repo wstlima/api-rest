@@ -23,7 +23,7 @@
       "user": "mongodb",
       "ref"  : "origin/master",
       "path" : "/usr/app",
-      "pre-deploy-local": "git fetch origin main && git checkout -f origin && git checkout main &&  git pull",
+      "pre-deploy-local": "pm2 stop api-rest && git fetch origin main && git checkout -f origin && git checkout main &&  git pull && pm2 start api-rest && pm2 reload api-rest",
       "post-deploy" : "npm install --no-audit && npm run build && pm2 startOrRestart pm2.json --env production",
       "key": "~/.ssh/id_rsa"
     }
