@@ -4,13 +4,12 @@ services:
 
   mongodb:
     image: controlemix/api-rest:latest
-    container_name: mongodb
+    container_name: mongodbo
     build:
       context: .
       dockerfile: Dockerfile.image 
     ports:
       - '27017:27017'
-      - '3000:3000'
     environment:
       - TZ=America/Sao_Paulo
       - MONGO_INITDB_DATABASE=apidb  
