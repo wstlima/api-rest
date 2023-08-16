@@ -67,7 +67,7 @@ Depois inicie a aplicação com o comando:
 
 ## Deploy da API no container
 
-Para fazer o deploy da API no container, execute o comando:
+Para fazer o deploy da API no container, e ver o git fazendo pull execute o comando:
 
 `npm run deploy:api`
 
