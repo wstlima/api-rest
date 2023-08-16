@@ -4,9 +4,6 @@ services:
 
   mongodb:
     image: controlemix/api-rest:latest
-    build:
-      context: .
-      dockerfile: Dockerfile.jammy  
     ports:
       - '27017:27017'
       - '3000:3000'
