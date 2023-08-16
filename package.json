@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "build:api": "pm2 stop api-rest && cd /usr/app  && git fetch origin main && git checkout -f origin && git checkout main &&  git pull && npm run build && pm2 start api-rest && pm2 reload api-rest",
+    "build:api": "pm2 stop api-rest && cd /usr/app  && git fetch origin main && git checkout -f origin && git checkout main &&  git pull && npm cache clear --force  && npm run install --no-audit  && npm run build && pm2 start api-rest && pm2 reload api-rest",
     "deploy:api": "docker-compose exec -T mongodb npm run build:api",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
